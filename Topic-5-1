@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
+int main(){
+    char *locale = setlocale(LC_ALL, "");
+    float x1 = 0;
+    float x2 = 0;
+    float y1 = 0;
+    float y2 = 0;
+    printf("Введите координаты первой точки: ");
+    scanf("%e %e", &x1, &y1);
+    printf("Введите координаты второй точки: ");
+    scanf("%e %e", &x2, &y2);
+    printf("Расстояние между точками = %g \n", sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)));
+    return 0;
+}
