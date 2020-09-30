@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
+int main(){
+    char *locale = setlocale(LC_ALL, "");
+    float x1 = 0;
+    float x2 = 0;
+    float x3 = 0;
+    float y1 = 0;
+    float y2 = 0;
+    float y3 = 0;
+    printf("Введите координаты первой точки: ");
+    scanf("%e %e", &x1, &y1);
+    printf("Введите координаты второй точки: ");
+    scanf("%e %e", &x2, &y2);
+    printf("Введите координаты третьей точки: ");
+    scanf("%e %e", &x3, &y3);
+    float AB = sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+    float AC = sqrt((x3-x1)*(x3-x1)+(y3-y1)*(y3-y1));
+    float BC = sqrt((x3-x2)*(x3-x2)+(y3-y2)*(y3-y2));
+    printf("P = %g \n", AB + AC + BC);
+    float p = (AB + AC + BC)/2;
+    float s = sqrt(p*(p-AC)*(p-BC)*(p-AB));
+    printf("S = %g \n", s);
+    return 0;
+}
