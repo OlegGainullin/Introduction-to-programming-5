@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
+int main(){
+    char *locale = setlocale(LC_ALL, "");
+    float a = 0;
+    float b = 0;
+    float c = 0;
+    printf("Введите координаты точки A: ");
+    scanf("%e", &a);
+    printf("Введите координаты точки B: ");
+    scanf("%e", &b);
+    printf("Введите координаты точки C: ");
+    scanf("%e", &c);
+    float ac = abs(a-c);
+    float bc = abs(b-c);
+    printf("AC = %g \n", ac);
+    printf("BC = %g \n", bc);
+    printf("AC + BC = %g \n", ac+bc);
+    return 0;
+}
